@@ -5,11 +5,13 @@
 # divisible by itself and the number 1.
 
 def is_prime?(number)
-
+  return false if num <= 1
+  Math.sqrt(num).to_i.downto(2).each { |i| return false if num % i == 0 }
+  true
 end
 
 # Second, implement the highest_prime_number_under method below. It should accept a number as
-# an argument and return the highest prime number under that number. For example, the 
+# an argument and return the highest prime number under that number. For example, the
 # highest prime number under 10 is 7.
 
 def highest_prime_number_under(number)
